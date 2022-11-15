@@ -1,0 +1,14 @@
+{
+  "resourceName": "amplifynotesauth",
+  "policyUUID": "ab6b0cbe",
+  "bucketName": "amplifynotesauth24043b5eebcb477c81c1eb656c47793",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
