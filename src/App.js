@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import "@aws-amplify/ui-react/styles.css";
+/* eslint-disable react/jsx-no-bind */
+import React, { useState, useEffect } from 'react';
+import './App.css';
+// eslint-disable-next-line import/no-unresolved
+import '@aws-amplify/ui-react/styles.css';
 import { API, Storage } from 'aws-amplify';
 import {
   Button,
@@ -13,19 +15,16 @@ import {
   withAuthenticator,
   SwitchField,
 } from '@aws-amplify/ui-react';
-import { listNotes } from "./graphql/queries";
+import { listNotes } from './graphql/queries';
 import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
-} from "./graphql/mutations";
+} from './graphql/mutations';
 
-const App = ({ signOut }) => {
+// eslint-disable-next-line react/prop-types
+function App({ signOut }) {
   const [notes, setNotes] = useState([]);
   const [colorMode, setColorMode] = useState('light');
-
-  useEffect(() => {
-    fetchNotes();
-  }, []);
 
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
@@ -34,10 +33,11 @@ const App = ({ signOut }) => {
       notesFromAPI.map(async (note) => {
         if (note.image) {
           const url = await Storage.get(note.name);
+          // eslint-disable-next-line no-param-reassign
           note.image = url;
         }
         return note;
-      })
+      }),
     );
     setNotes(notesFromAPI);
   }
@@ -45,13 +45,13 @@ const App = ({ signOut }) => {
   async function createNote(event) {
     event.preventDefault();
     const form = new FormData(event.target);
-    const image = form.get("image");
+    const image = form.get('image');
     const data = {
-      name: form.get("name"),
-      description: form.get("description"),
+      name: form.get('name'),
+      description: form.get('description'),
       image: image.name,
     };
-    if (!!data.image) await Storage.put(data.name, image);
+    if (data.image) await Storage.put(data.name, image);
     await API.graphql({
       query: createNoteMutation,
       variables: { input: data },
@@ -70,13 +70,17 @@ const App = ({ signOut }) => {
     });
   }
 
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
   return (
     <View className="App">
       <SwitchField
         isDisabled={false}
         label="SwitchField"
         labelPosition="start"
-        onChange={(e) => {
+        onChange={() => {
           setColorMode(!colorMode);
         }}
       />
@@ -103,7 +107,7 @@ const App = ({ signOut }) => {
             name="image"
             as="input"
             type="file"
-            style={{ alignSelf: "end" }}
+            style={{ alignSelf: 'end' }}
           />
           <Button type="submit" variation="primary">
             Create Note
@@ -136,13 +140,13 @@ const App = ({ signOut }) => {
             </Button>
           </Flex>
         ))}
-       
+
       </View>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
-};
+}
 
 export default withAuthenticator(App, {
-  socialProviders: ['apple']
-})
+  socialProviders: ['apple'],
+});
