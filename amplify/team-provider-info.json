@@ -17,6 +17,9 @@
       },
       "api": {
         "amplifynotesauth": {}
+      },
+      "storage": {
+        "amplifynotesauth": {}
       }
     }
   }
