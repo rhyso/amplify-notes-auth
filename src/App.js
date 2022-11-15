@@ -11,6 +11,7 @@ import {
   TextField,
   View,
   withAuthenticator,
+  SwitchField,
 } from '@aws-amplify/ui-react';
 import { listNotes } from "./graphql/queries";
 import {
@@ -20,6 +21,7 @@ import {
 
 const App = ({ signOut }) => {
   const [notes, setNotes] = useState([]);
+  const [colorMode, setColorMode] = useState('light');
 
   useEffect(() => {
     fetchNotes();
@@ -70,6 +72,14 @@ const App = ({ signOut }) => {
 
   return (
     <View className="App">
+      <SwitchField
+        isDisabled={false}
+        label="SwitchField"
+        labelPosition="start"
+        onChange={(e) => {
+          setColorMode(!colorMode);
+        }}
+      />
       <Heading level={1}>My Notes App</Heading>
       <View as="form" margin="3rem 0" onSubmit={createNote}>
         <Flex direction="row" justifyContent="center">
@@ -126,11 +136,13 @@ const App = ({ signOut }) => {
             </Button>
           </Flex>
         ))}
-        
+       
       </View>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
   );
 };
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  socialProviders: ['apple']
+})
