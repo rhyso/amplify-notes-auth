@@ -18,7 +18,6 @@ function Home() {
           </section>
         </div>
         <div className="body-content">
-
           <h1 className="hero-head">We design, build and scale digital products and companies.</h1>
           <h3>A longer subtitle but still important</h3>
           <button type="button" className="button">Some Action Here</button>
