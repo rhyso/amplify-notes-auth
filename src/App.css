@@ -42,12 +42,10 @@
 
 
 .hero {
-  //background-image: url('https://amplifynotesauth24043b5eebcb477c81c1eb656c47793140701-staging.s3.eu-west-2.amazonaws.com/public/fatih-kgqu_qs3B78-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-  width: 100wh;
-  height: 100vh;
-  //display: flex;
+  width: 83%;  
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .center-content {
@@ -70,7 +68,7 @@
 .body-content{
   width:80%;
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: 60px;
 }
 
 h1.hero-head{
@@ -83,7 +81,7 @@ h1.hero-head{
 /*Logo*/
 
 .logo-wrapper{
-  width:80%;
+  width:83%;
   margin: 0 auto;
   padding-top: 50px;
 }

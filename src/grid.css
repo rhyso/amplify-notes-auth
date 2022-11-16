@@ -1,0 +1,33 @@
+.Grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Grid-item {
+    width: 100%;
+    background: firebrick;
+    margin-top: 2%;
+  }
+  @media (min-width: 48rem) {
+    .Grid-item {
+      width: 49%;
+    }
+    .Grid-item:nth-child(odd) {
+      background: black;
+      margin-right: 2%;
+    }
+  }
+  @media (min-width: 62rem) {
+    .Grid-item {
+      width: 47.5%;
+    }
+    .Grid-item:not(:nth-child(4n)) {
+      background: black;
+      margin-right: 2%;
+    }
+  }
+  .Grid-item:before {
+    content: "";
+    float: left;
+    padding-top: 100%;
+  }
+  
