@@ -103,6 +103,10 @@ section img {
 	animation-direction: alternate;
 }
 
+.bottom{
+  border:1px solid white;
+}
+
 @keyframes fade {
 	0% {
 		opacity: 1;
