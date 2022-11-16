@@ -1,20 +1,24 @@
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
+import { Heading, View } from '@aws-amplify/ui-react';
+import logo from './images/mb7.svg';
+import logoWhite from './images/mb7-white.svg';
 import './App.css';
 // eslint-disable-next-line import/no-unresolved
 import '@aws-amplify/ui-react/styles.css';
-import {
-
-  Heading,
-
-  View,
-
-} from '@aws-amplify/ui-react';
 
 function Home() {
   return (
     <View>
       <header className="hero">
+        <div className="logo-wrapper">
+          <section>
+            <img className="bottom" width="200" alt="dsd" src={logo} />
+            <img className="top" width="200" alt="ds" src={logoWhite} />
+          </section>
+        </div>
         <div className="body-content">
+
           <h1 className="hero-head">We design, build and scale digital products and companies.</h1>
           <h3>A longer subtitle but still important</h3>
           <button type="button" className="button">Some Action Here</button>
