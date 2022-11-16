@@ -73,10 +73,9 @@
 
 h1.hero-head{
   font-family: 'Roboto', sans-serif;
-  font-size:92px;
+  font-size:5.75em;
   line-height: 1.2;
 }
-
 
 /*Logo*/
 
@@ -85,6 +84,7 @@ h1.hero-head{
   margin: 0 auto;
   padding-top: 50px;
 }
+
 section {
   position: relative;
 }
@@ -120,3 +120,30 @@ section img {
 	}
 }
 
+
+/* iPhone12 Pro */
+@media (max-width: 400px) {
+  h1.hero-head{
+    padding-top: 60px;
+    padding-bottom: 10px;
+    font-size: 48px;
+  }
+
+  .logo-wrapper{    
+    margin: 0 auto;
+    width:100%;
+    margin-left: -25px;
+    padding-top: 0px;
+    display: inline;
+  }
+  .hero{
+    display:auto
+  }
+
+  .navigation-strip{
+    display: none;
+  }
+  .Grid-item {
+    margin-top: 20%;
+  }
+}
