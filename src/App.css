@@ -1,16 +1,30 @@
+*{
+  font-family: 'Mulish', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
+h1{
+  color:#172734;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+.text{
+  color:rgba(23,39,52,.5);
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.left-col h1{
+  margin-bottom: 0;
 }
 
 .App-header {
@@ -120,7 +134,46 @@ section img {
 	}
 }
 
+.left-right-wrapper{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
 
+
+.left-col{
+  min-height: 1px;
+  padding-right: 10px;
+  clear:both;  
+  width:40%;
+}
+
+.right-col{
+  width:60%;
+  min-height: 1px;
+  clear:both;
+  flex-grow: 1;
+}
+
+
+
+.w-layout-grid {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+._1to3-logo-column{
+  padding: 30px;
+}
+
+.mobileMenu{
+  display: none;
+}
+
+.navigation-strip{
+  display: block;
+}
 /* iPhone12 Pro */
 @media (max-width: 400px) {
   h1.hero-head{
@@ -129,6 +182,9 @@ section img {
     font-size: 48px;
   }
 
+  .mobileMenu{
+    display: block;
+  }
   .logo-wrapper{    
     margin: 0 auto;
     width:100%;

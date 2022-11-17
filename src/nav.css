@@ -30,7 +30,6 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
-    width: 80%;
     box-sizing: border-box;
     padding-right: 165px;
     padding-left: 48px;
@@ -77,6 +76,7 @@
   .navigation-strip__list a {
     line-height: 40px;
     text-decoration: none;
+    color:steelblue
 
   }
   @media (max-width: 768px) {
