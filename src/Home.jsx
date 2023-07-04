@@ -30,7 +30,7 @@ function Home() {
       </header>
       <div className="body-content">
         <h1 className="animate__animated animate__backInRight hero-head">We design, build and scale digital products and companies.</h1>
-        <h3>A longer subtitle but still is an important one</h3>
+        <h3>A longer subtitle but still is an important one.</h3>
         <button type="button" className="button">Some Action Here</button>
 
         <Grid />
